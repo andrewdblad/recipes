@@ -61,7 +61,7 @@ Content-Type: application/json
     "birthday":"11/15/2001"
 }
 ### Update contact with specific id
-PUT https://cse341-blad.onrender.com/contacts HTTP/1.1
+PUT https://cse341-blad.onrender.com/contacts/65aae366050866db1e544bfa HTTP/1.1
 Content-Type: application/json
 
 {
@@ -73,6 +73,6 @@ Content-Type: application/json
 }
 
 ### Delete contact with specific id
-DELETE https://cse341-blad.onrender.com/contacts/65b3fd7d9919e40ce40e6edc HTTP/1.1
+DELETE https://cse341-blad.onrender.com/contacts/65b3fe734378859f745e5e8a HTTP/1.1
 
 
