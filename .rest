@@ -1,5 +1,18 @@
 GET http://localhost:8080/contacts
 
+GET http://localhost:8080/contacts/65aae366050866db1e544bfa
+
+GET http://localhost:8080/contacts/65aae366050866db1e544bfb
+
+GET http://localhost:8080/contacts/65aae366050866db1e544bfc
 ###
 
-Get https://cse341-blad.onrender.com HTTP/1.1
+Get https://cse341-blad.onrender.com/contacts 
+
+Get https://cse341-blad.onrender.com/contacts/65aae366050866db1e544bfa
+
+Get https://cse341-blad.onrender.com/contacts/65aae366050866db1e544bfb 
+
+Get https://cse341-blad.onrender.com/contacts/65aae366050866db1e544bfc 
+
+
