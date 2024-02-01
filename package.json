@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js",
-    "swagger": "node ./swagger.js"
+    "swagger": "node ./swagger.js",
+    "lint": "eslint ."
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +17,7 @@
     "mongodb": "^6.3.0"
   },
   "devDependencies": {
+    "eslint": "^8.56.0",
     "nodemon": "^3.0.2",
     "swagger-autogen": "^2.23.7"
   }
