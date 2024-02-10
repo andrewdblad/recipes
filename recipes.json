@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Chicken Noodle Soup",
+        "author": "Bob Joe",
+        "date": "10/10/10",
+        "prepTime": "30 mins",
+        "cookTime": "30 mins",
+        "totalTime": "1 hour",
+        "videoLink": "testlink.com",
+        "ingredients": [
+            "flour noodles",
+            "carrots",
+            "chicken",
+            "chicken broth",
+            "celery"
+    ]
+    }
+]
