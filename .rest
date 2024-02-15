@@ -5,7 +5,7 @@ GET http://localhost:8080/recipes
 GET http://localhost:8080/recipes/65c7c7372b0a5fd8c60b6c86
 
 ### Update Recipe - PUT Request
-PUT http://localhost:8080/recipes/65cd89db5b0bac363a9edfe8
+PUT http://localhost:8080/recipes/65c7c7372b0a5fd8c60b6c86
 Content-Type: application/json
 
 {
@@ -16,15 +16,13 @@ Content-Type: application/json
   "cookTime": "30 mins",
   "totalTime": "1 hour",
   "videoLink": "testlink.com",
-  "ingredients": ["updated flour noodles", "updated carrots", "updated chicken", "updated chicken broth", "updated celery"]
+  "ingredients": ["flour noodles", "carrots", "chicken", "chicken broth", "celery"]
 }
 
 ### Delete Recipe - DELETE Request
-DELETE http://localhost:8080/recipes/65cd89db5b0bac363a9edfe8
+DELETE http://localhost:8080/recipes/65c7c7372b0a5fd8c60b6c86
 
 
-###
-Get https://cse341-blad.onrender.com/recipe
 
 
 

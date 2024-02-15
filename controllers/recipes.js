@@ -76,7 +76,7 @@ const deleteRecipe = async (req, res) => {
     const result = await mongodb.getDb().db().collection('recipes').deleteOne({ _id: userId });
 
     if (result.deletedCount === 1) {
-      res.status(200).json({ message: 'Recipe deleted successfully' });
+      res.status(204).json({ message: 'Recipe deleted successfully' });
     } else {
       res.status(404).json({ error: 'Recipe not found' });
     }
