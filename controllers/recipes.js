@@ -3,16 +3,23 @@ const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res) => {
   try {
+    console.log('getAll function called');
     const result = await mongodb.getDb().db().collection('recipes').find().toArray();
-    console.log('Result:', result);
 
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(result);
+    // Validation: Check if the result is an array
+    if (Array.isArray(result)) {
+      res.setHeader('Content-Type', 'application/json');
+      res.status(200).json(result);
+    } else {
+      res.status(500).json({ error: 'Internal Server Error - Invalid data received' });
+    }
+
   } catch (error) {
     console.error('Error in getAll:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 };
+
   
 const getSingle = async (req, res) => {
   try {
