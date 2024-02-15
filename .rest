@@ -1,5 +1,27 @@
-### Get all contacts
-GET http://localhost:8080/recipe
+### Get all recipes - Get Request
+GET http://localhost:8080/recipes
+
+### Get by recipe id - GET Request (id)
+GET http://localhost:8080/recipes/65c7c7372b0a5fd8c60b6c86
+
+### Update Recipe - PUT Request
+PUT http://localhost:8080/recipes/65cd89db5b0bac363a9edfe8
+Content-Type: application/json
+
+{
+  "name": "Updated Chicken Noodle Soup",
+  "author": "Bob Joe",
+  "date": "10/10/10",
+  "prepTime": "30 mins",
+  "cookTime": "30 mins",
+  "totalTime": "1 hour",
+  "videoLink": "testlink.com",
+  "ingredients": ["updated flour noodles", "updated carrots", "updated chicken", "updated chicken broth", "updated celery"]
+}
+
+### Delete Recipe - DELETE Request
+DELETE http://localhost:8080/recipes/65cd89db5b0bac363a9edfe8
+
 
 ###
 Get https://cse341-blad.onrender.com/recipe
