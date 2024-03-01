@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const passport = require('passport');
 const mongodb = require('./db/connect');
+const authRoutes = require('./controllers/authController');
 
 const port = process.env.PORT || 8080;
 const app = express();
@@ -18,7 +19,12 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-require('./controllers/authController');
+// Set EJS as the view engine
+app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
+
+// authRoutes(app);
+
 
 app
   .use(bodyParser.json())
