@@ -9,17 +9,22 @@ passport.deserializeUser((obj, done) => {
   done(null, obj);
 });
 
-passport.use(
-  new GoogleStrategy(
-    {
-      clientID: process.env.CLIENT_ID,
-      clientSecret: process.env.CLIENT_SECRET,
-      callbackURL: 'http://localhost:8080/auth/google/callback',
-    },
-    (accessToken, refreshToken, profile, done) => {
-      // You can save user data to your database here or perform other actions.
-      return done(null, profile);
-    }
-  )
-);
+const setupPassport = () => {
+  passport.use(
+    new GoogleStrategy(
+      {
+        clientID: process.env.CLIENT_ID,
+        clientSecret: process.env.CLIENT_SECRET,
+        callbackURL: 'http://localhost:8080/auth/google/callback',
+      },
+      (accessToken, refreshToken, profile, done) => {
+        // You can save user data to your database here or perform other actions.
+        return done(null, profile);
+      }
+    )
+  );
+};
+
+module.exports = setupPassport;
+
 
