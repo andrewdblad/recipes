@@ -22,6 +22,9 @@ Content-Type: application/json
 ### Delete Recipe - DELETE Request
 DELETE http://localhost:8080/recipes/65c7c7372b0a5fd8c60b6c86
 
+### Get all recipes RENDER
+GET https://recipes-w7xl.onrender.com/recipes
+
 
 
 

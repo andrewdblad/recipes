@@ -8,5 +8,92 @@
 </head>
 <body>
   <h1>Login Successful</h1>
+
+  <!-- Logout Button -->
+  <form method="post" action="/logout">
+    <button type="submit">Logout</button>
+  </form>
+
+  <!-- Recipe Route Method Buttons -->
+  <button onclick="sendRequest('GET', '/recipes')">GET All Recipes</button>
+  <button onclick="sendRequest('GET', '/recipes/65cd8cce5b0bac363a9edfea')">GET Single Recipe</button>
+  <button onclick="updateRecipe()">Update Recipe</button>
+  <button onclick="confirmAndDelete()">Delete Recipe</button>
+
+  <script>
+    // Function to send AJAX requests
+    function sendRequest(method, url) {
+      var xhr = new XMLHttpRequest();
+      xhr.open(method, url, true);
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+          if (xhr.status == 200) {
+            alert('Response:\n' + xhr.responseText);
+          } else {
+            alert('Error:\n' + xhr.status + ' ' + xhr.statusText);
+          }
+        }
+      };
+
+      xhr.send();
+    }
+
+    function updateRecipe() {
+      // Test data for updating the recipe
+      var testData = {
+   
+        name: "Updated Chicken Noodle Soup",
+        author: "Bob Joe",
+        date: "10/10/10",
+        prepTime: "30 mins",
+        cookTime: "30 mins",
+        totalTime: "1 hour",
+        videoLink: "testlink.com",
+        ingredients: ["flour noodles", "carrots", "chicken", "chicken broth", "celery"]
+
+        // Add more properties as needed
+      };
+
+      // Make a PUT request to update the recipe
+      var xhr = new XMLHttpRequest();
+      xhr.open('PUT', '/recipes/65cd8cce5b0bac363a9edfea');
+      xhr.setRequestHeader('Content-Type', 'application/json');
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            alert('Recipe updated successfully!');
+          } else {
+            alert('Error updating recipe. Please try again.');
+          }
+        }
+      };
+
+      xhr.send(JSON.stringify(testData));
+    }
+
+    function confirmAndDelete() {
+      // Ask for user confirmation
+      if (confirm('Are you sure you want to delete this recipe?')) {
+        // If confirmed, make a DELETE request
+        var xhr = new XMLHttpRequest();
+        xhr.open('DELETE', '/recipes/65cd8cce5b0bac363a9edfea');
+        
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              alert('Recipe deleted successfully!');
+            } else {
+              alert('Error deleting recipe. Please try again.');
+            }
+          }
+        };
+        
+        xhr.send();
+      }
+    }
+  </script>
 </body>
 </html>
+

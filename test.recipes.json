@@ -1,0 +1,60 @@
+[{
+  "_id": {
+    "$oid": "65cd8cce5b0bac363a9edfea"
+  },
+  "name": "Spaghetti Bolognese",
+  "author": "Alice Smith",
+  "date": "2022-02-14",
+  "prepTime": "20 mins",
+  "cookTime": "30 mins",
+  "totalTime": "50 mins",
+  "videoLink": "testlink.com/spaghetti",
+  "ingredients": [
+    "spaghetti",
+    "ground beef",
+    "tomato sauce",
+    "onions",
+    "garlic",
+    "olive oil"
+  ]
+},
+{
+  "_id": {
+    "$oid": "65cd8cce5b0bac363a9edfeb"
+  },
+  "name": "Vegetable Stir-Fry",
+  "author": "Charlie Brown",
+  "date": "2022-02-15",
+  "prepTime": "15 mins",
+  "cookTime": "15 mins",
+  "totalTime": "30 mins",
+  "videoLink": "testlink.com/stir-fry",
+  "ingredients": [
+    "broccoli",
+    "carrots",
+    "bell peppers",
+    "tofu",
+    "soy sauce",
+    "ginger"
+  ]
+},
+{
+  "_id": {
+    "$oid": "65cd8cce5b0bac363a9edfec"
+  },
+  "name": "Chocolate Chip Cookies",
+  "author": "Eve Johnson",
+  "date": "2022-02-16",
+  "prepTime": "10 mins",
+  "cookTime": "12 mins",
+  "totalTime": "22 mins",
+  "videoLink": "testlink.com/cookies",
+  "ingredients": [
+    "flour",
+    "butter",
+    "sugar",
+    "chocolate chips",
+    "baking soda",
+    "vanilla extract"
+  ]
+}]
