@@ -9,6 +9,10 @@ const authController = require('./controllers/authController');
 const port = process.env.PORT || 8080;
 const app = express();
 
+// Set EJS as the view engine
+app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
+
 // Use express-session middleware
 app.use(session({
   secret: process.env.SESSION_SECRET,
@@ -20,22 +24,20 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Set EJS as the view engine
-app.set('view engine', 'ejs');
-app.set('views', __dirname + '/views');
-
+// Setup Passport strategies
 authController(passport);
 
+
+// CORS middleware
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  next();
+});
+
+// Routes
+app.use(bodyParser.json());
+app.use('/', require('./routes'));
 authRoutes(app);
-
-
-app
-  .use(bodyParser.json())
-  .use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    next();
-  })
-  .use('/', require('./routes'));
 
 mongodb.initDb((err, mongodb) => {
   if (err) {
@@ -45,3 +47,4 @@ mongodb.initDb((err, mongodb) => {
     console.log(`Connected to DB and listening on ${port}`);
   }
 });
+
